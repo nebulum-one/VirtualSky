@@ -250,7 +250,7 @@ function VirtualSky(input){
 	this.q = S.query();    // Query string
 	this.setDir();	// Set the default base directory
 	this.dir = this.getDir();  // the JS file path
-	this.langurl = this.dir + "lang/%LANG%.json";	// The location of the language files
+	this.langurl = "https://meta-q.cdn.bubble.io/f1768268903488x444193798543659700/en.json";	// The location of the language files
 
 	this.id = '';						// The ID of the canvas/div tag - if none given it won't display
 	this.gradient = true;				// Show the sky gradient
@@ -841,14 +841,14 @@ function VirtualSky(input){
 	for(i = 0; i < this.stars.length; i++) this.lookup.star.push({'ra':this.stars[i][2],'dec':this.stars[i][3],'label':this.stars[i][0],'mag':this.stars[i][1]});
 
 	// Define extra files (JSON/JS)
-	this.file = {
-		stars: this.dir+"stars.json",                 // Data for faint stars - 54 kB
-		lines: this.dir+"lines_latin.json",           // Data for constellation lines - 12 kB
-		boundaries: this.dir+"boundaries.json",       // Data for constellation boundaries - 20 kB
-		showers: this.dir+"showers.json",             // Data for meteor showers - 4 kB
-		galaxy: this.dir+"galaxy.json",               // Data for milky way - 12 kB
-		planets: this.dir+"virtualsky-planets.js" // Plugin for planet ephemeris - 12kB
-	};
+this.file = {
+    stars: "https://meta-q.cdn.bubble.io/f1768268774210x719692257177494000/stars.json",
+    lines: "https://meta-q.cdn.bubble.io/f1768268816852x790850097463706200/lines_latin.json",
+    boundaries: "https://meta-q.cdn.bubble.io/f1768268853447x487334239064398640/boundaries.json",
+    showers: "https://meta-q.cdn.bubble.io/f1768268995131x681062970465175600/showers.json",
+    galaxy: "https://meta-q.cdn.bubble.io/f1768268932791x812687178315011600/galaxy.json",
+    planets: "https://meta-q.cdn.bubble.io/f1768268968312x996026569934072200/planets.json"
+};
 
 	this.hipparcos = {};          // Define our star catalogue
 	this.updateClock(new Date()); // Define the 'current' time
